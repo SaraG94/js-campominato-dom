@@ -1,18 +1,19 @@
 console.log('ciaoo');
+//prendere elemento risultato
+const resultElement = document.getElementById('risultato');
 
 //prendere il tasto Gioca
 const buttonElement = document.getElementById('pulsante');
 console.log(buttonElement);
 
 //al click su play si genera griglia
-
 buttonElement.addEventListener('click', startGame)
     console.log('click');
     
 //array numero random bombe
 let bombs = [];
 
-//generare 16 numeri random diversi tra loro e minoriUgali all'ultima cella
+//generare 16 numeri random 
 while(bombs.length < 16){
     let numbBombs = Math.floor(Math.random() * 100) + 1;
     console.log(numbBombs);
@@ -20,10 +21,6 @@ while(bombs.length < 16){
     bombs.push(numbBombs)
 }
 console.log(bombs)
-
-//confrontare array con celle
-//se clicco su cella compresa in bombs
-    //ho perso
 
 function startGame (){
     //dichiarare griglia vuota
@@ -74,8 +71,11 @@ function startGame (){
         //al click sulle celle
         cella.addEventListener('click', onClick);
     }
+
+
     return 'Fine star game'
 }
+
 
 function onClick(event){
     console.log(event);
@@ -85,8 +85,23 @@ function onClick(event){
     const cella = this;
 	console.log(cella.innerHTML);
 
-    cella.classList.add('new-color');
-	cella.removeEventListener('click', onClick);
+    //confrontro celle e array
+    let cellaBombs = bombs.includes(parseInt(cella.innerHTML));
+    console.log(cellaBombs, 'boom');
+
+    //se clicco su cella con bomba
+    if(cellaBombs === true){
+        // bg-color red su cella
+        cella.classList.add('boom');        
+	    cella.removeEventListener('click', onClick);
+        resultElement.innerHTML='Hai perso!'
+    } else{
+
+        cella.classList.add('new-color');
+	    cella.removeEventListener('click', onClick);
+    }
+    
+    
 }
    
    
