@@ -10,9 +10,15 @@ buttonElement.addEventListener('click', startGame)
     console.log('click');
     
 //array numero random bombe
-const bombs = [];
+let bombs = [i];
 
 //generare 16 numeri random diversi tra loro e minoriUgali all'ultima cella
+while(bombs = 16 && bombs <= numeroCelle && bombs!==bombs){
+    let numbBombs =parseInt(Math.floor(Math.random() * numeroCelle) + 1) ;
+    console.log(numbBombs);
+
+
+}
 //confrontare array con celle
 //se clicco su cella compresa in bombs
     //ho perso
