@@ -39,7 +39,7 @@ function startGame (){
         divElement.classList.add('celle');
 
         //aggiungere style 
-        divElement.setAttribute("style", "width:calc(100% / 10)");
+        divElement.setAttribute("style", `width:calc(100% / ${latoGriglia} )`);
 
         //stampare contenuto celle
         divElement.innerHTML=num;
@@ -57,17 +57,23 @@ function startGame (){
         let cella = celleElements[i];
 
         //al click sulle celle
-        cella.addEventListener('click', function () {
-            console.log('sei qui!');
-
-            //aggiungere classe
-            cella.classList.add('new-color');
-            console.log(cella); 
-        })
+        cella.addEventListener('click', onClick);
     }
     return 'Fine star game'
 }
 
+function onClick(event){
+    console.log(event);
+	console.log(event.target);
+	console.log(this);
+	console.log(event.target === this);
+
+    const cella = this;
+	console.log(cella.innerHTML);
+
+    cella.classList.add('new-color');
+	cella.removeEventListener('click', onClick);
+}
    
    
 
