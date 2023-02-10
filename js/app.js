@@ -9,6 +9,13 @@ console.log(buttonElement);
 buttonElement.addEventListener('click', startGame)
     console.log('click');
     
+//array numero random bombe
+const bombs = [];
+
+//generare 16 numeri random diversi tra loro e minoriUgali all'ultima cella
+//confrontare array con celle
+//se clicco su cella compresa in bombs
+    //ho perso
 
 function startGame (){
     //dichiarare griglia vuota
@@ -66,7 +73,6 @@ function onClick(event){
     console.log(event);
 	console.log(event.target);
 	console.log(this);
-	console.log(event.target === this);
 
     const cella = this;
 	console.log(cella.innerHTML);
