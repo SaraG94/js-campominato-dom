@@ -29,6 +29,16 @@ body{
 	padding: 20px;
 }
 
+.score{
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#numbero-punteggio{
+	font-style: italic;
+}
+
 .griglia {
 	display: flex;
 	flex-wrap: wrap;
@@ -36,11 +46,14 @@ body{
 
 .griglia > * {
 	aspect-ratio: 1;
-	border: 2px solid black;
+	border: 1px solid black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 24px;
+	background-color: #638ecb73;
+    font-style: italic;
+    color: dimgray;
 }
 
 .new-color{
